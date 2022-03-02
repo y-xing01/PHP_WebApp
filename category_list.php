@@ -10,7 +10,7 @@
     $statement->closeCursor();
 ?>
 <!-- the head section -->
-<div class="container">
+<div class="container-l">
 <?php
 include('includes/header.php');
 ?>

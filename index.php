@@ -45,44 +45,53 @@ $statement3->closeCursor();
     <?php
     include('includes/header.php');
     ?>
-    <h1>Record List</h1>
+
 
 
     <section>
         <!-- display a table of records -->
-        <p>smurf</p>
-        <h2><?php echo $category_name; ?></h2>
+        <div class="d-flex flex-row justify-content-between mt-3">
+            <h2><?php echo $category_name; ?></h2>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark bg-primary" type="submit">Search</button>
+            </form>
+        </div>
 
-        <table>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Delete</th>
-                <th>Edit</th>
-            </tr>
 
-            <?php foreach ($records as $record) : ?>
-                <tr>
-                    <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-                    <td><?php echo $record['name']; ?></td>
-                    <td class="right"><?php echo $record['price']; ?></td>
-                    <td>
-                        <form action="delete_record.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
-                            <input type="submit" value="Delete">
-                        </form>
-                    </td>
-                    <td>
-                        <form action="edit_record_form.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr class="text-center table-secondary">
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
-            <?php endforeach; ?>
+            </thead>
+            <tbody>
+                <?php foreach ($records as $record) : ?>
+                    <tr class="text-center table-active">
+                        <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="110px" /></td>
+                        <td class="pt-5"><?php echo $record['name']; ?></td>
+                        <td class="pt-5 right"><?php echo $record['price']; ?></td>
+                        <td class="pt-5">
+                            <form action="delete_record.php" method="post" id="delete_record_form">
+                                <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
+                                <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
+                                <input class="bg-secondary" type="submit" value="Delete">
+                            </form>
+                        </td>
+                        <td class="pt-5">
+                            <form action="edit_record_form.php" method="post" id="delete_record_form">
+                                <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
+                                <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
+                                <input class="bg-secondary" type="submit" value="Edit">
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </section>
     <?php

@@ -10,49 +10,40 @@
 <!-- the body section -->
 
 <body>
-  <header style="text-align:center;">
-    <h1>Badminton Equipment Online Store</h1>
+  <header>
+    <h1 style="text-align:center">Badminton Equipment Online Store</h1>
   </header>
 
 
 
   <!-- <nav class="navbar navbar-dark bg-primary navbar-expand-lg justify-content-center"> -->
-  <nav class="navbar navbar-light bg-primary justify-content-center">
+  <nav class="navbar navbar-light bg-primary justify-content-center" style="height: 60px;">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler mb-5 position-absolute" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title h1" id="offcanvasNavbarLabel">Menu</h5>
+          <h5 class="offcanvas-title h1" id="offcanvasNavbarLabel">Badminton</h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="add_record_form.php">Add Record</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="category_list.php">Manage Food Type</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Food category
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                <?php foreach ($food_type as $category) : ?>
-                  <li>
-                    <a class="dropdown-item" href=".?category_id=<?php echo $category['food_typeID']; ?>">
-                      <?php echo $category['foodName']; ?>
-                    </a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </li>
-          </ul>
+            <?php foreach ($categories as $category) : ?>
+              <li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+                  <?php echo $category['categoryName']; ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
         </div>
       </div>
+      <div class="col align-self-center d-lg-flex justify-content-center position-static mb-5">
+        <a class="nav-link active text-light" style="font-size:20px" aria-current="page" href="index.php">Home</a>
+        <a class="nav-link class= nav-link text-light" style="font-size:20px" href="add_record_form.php">Add Stock</a>
+        <a class="nav-link class= nav-link text-light" style="font-size:20px" href="category_list.php">Manage Stock</a>
+
+      </div>
+
     </div>
   </nav>
   <!-- 
@@ -63,3 +54,8 @@
           <a class="nav-link class= nav-link mr-5" style="font-size:22px" href="category_list.php">Manage Stock</a>
         </div>
       </div> -->
+
+  <!-- <form class="d-flex mb-5">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark bg-primary" type="submit">Search</button>
+      </form> -->

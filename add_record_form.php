@@ -9,7 +9,7 @@ $categories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!-- the head section -->
- <div class="container-xxl">
+ <div class="container-l">
 <?php
 include('includes/header.php');
 ?>
