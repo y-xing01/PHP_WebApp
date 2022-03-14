@@ -1,4 +1,12 @@
 /*Variables styles go under here */
+#homeButton {
+  margin-top: 10%;
+}
+
+#textCenter {
+  text-align: center;
+}
+
 /*Fonts styles go under here*/
 h1 {
   color: #333;
@@ -24,6 +32,22 @@ h2 {
   padding: .5em 2em;
 }
 
+#test1 {
+  margin-bottom: 120px;
+}
+
+#test2 {
+  margin-bottom: 155px;
+}
+
+#test1 {
+  margin-bottom: 100px;
+}
+
+html {
+  height: 100px;
+}
+
 /*Header styles go under here*/
 header {
   margin: 0;
@@ -39,7 +63,7 @@ header h1 {
 
 /*Footer styles go under here*/
 footer {
-  clear: both;
+  margin-bottom: -100px;
   margin-top: 1em;
   border-top: 2px solid black;
 }

@@ -2,8 +2,8 @@
 --
 -- Table structure for table `categories`
 --
-
-CREATE TABLE `categories` (
+DROP TABLE IF EXISTS categories;
+CREATE TABLE categories (
   `categoryID` int(11) NOT NULL,
   `categoryName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -13,15 +13,15 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
-(1, 'Category 1'),
-(2, 'Category 2'),
-(3, 'Category 3');
+(1, 'Badminton Racket'),
+(2, 'Badminton Shoe'),
+(3, 'Badminton Shirt');
 
 --
 -- Table structure for table `records`
 --
-
-CREATE TABLE `records` (
+DROP TABLE IF EXISTS records;
+CREATE TABLE records (
   `recordID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -34,23 +34,25 @@ CREATE TABLE `records` (
 --
 
 INSERT INTO `records` (`recordID`, `categoryID`, `name`, `price`, `image`) VALUES
-(1, 1, 'Some text', '12.00', '644471.jpg'),
-(2, 1, 'Some text', '15.00', '233012.jpg'),
-(3, 1, 'Some text', '18.00', '329484.jpg'),
-(4, 1, 'Some text', '10.00', '644055.jpg'),
-(5, 2, 'Some text', '16.00', '373465.jpg'),
-(6, 2, 'Some text', '19.00', '373989.jpg'),
-(7, 2, 'Some text', '12.00', '374104.jpg'),
-(8, 2, 'Some text', '10.00', '4733.jpg'),
-(9, 2, 'Some text', '15.00', '834551.jpg'),
-(10, 3, 'Some text', '13.00', '908783.jpg'),
-(11, 3, 'Some text', '17.00', '835545.jpg'),
-(12, 3, 'Some text', '19.00', '119273.jpg');
+(1, 1, 'Yonex Nanoray Dynamic Zone Badminton Racket', '112.00', '1.jpg'),
+(2, 1, 'Yonex Astrox 22 Badminton Racket', '95.00', '2.jpg'),
+(3, 1, 'Yonex Astrox 7 Badminton Racket', '75.00', '3.jpg'),
+(4, 1, 'Yonex Astrox 5FX Badminton Racket', '67.00', '4.jpg'),
+(5, 2, 'Yonex Power Cushion Aerus 3 Mens Badminton Shoes (Blue)', '16.00', '5.jpg'),
+(6, 2, 'Yonex Power Cushion 65ZM Badminton Shoes (Black-Red)', '19.00', '6.jpg'),
+(7, 2, 'Yonex Power Cushion 36 Mens Badminton Shoes (Blue-White)', '12.00', '7.jpg'),
+(8, 2, 'Yonex Power Cushion Comfort Advance 3 Badminton Court Shoes (White-Blue)', '10.00', '8.jpg'),
+(9, 2, 'Yonex Power Cushion 65 X3 Badminton Shoes (White-Red)', '15.00', '9.jpg'),
+(10, 3, 'Yonex 16370 Mens Replica T-Shirt (Fire Red)', '33.00', '10.jpg'),
+(11, 3, 'Yonex YTM1 Mens T-Shirt (Burgundy)', '27.00', '11.jpg'),
+(12, 3, 'Yonex YP1002EX Mens Polo Shirt (Red)', '21.00', '12.jpg'),
+(13, 3, 'Yonex LT1025 Unisex T-Shirt (Black)', '28.00', '13.jpg');
 
 --
 -- Indexes for dumped tables
 --
-
+ALTER TABLE categories
+  ADD PRIMARY KEY (categoryID);
 --
 -- Indexes for table `records`
 --
@@ -60,9 +62,10 @@ ALTER TABLE `records`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
+  ALTER TABLE categories
+  MODIFY categoryID int(111) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `recordID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `recordID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;

@@ -41,13 +41,11 @@ $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-<div class="container-l">
-    <?php
-    include('includes/header.php');
-    ?>
 
-
-
+<?php
+include('includes/header.php');
+?>
+<div id="test1" class="container-l">
     <section>
         <!-- display a table of records -->
         <div class="d-flex flex-row justify-content-between mt-3">
@@ -57,7 +55,6 @@ $statement3->closeCursor();
                 <button class="btn btn-outline-dark bg-primary" type="submit">Search</button>
             </form>
         </div>
-
 
         <table class="table table-hover table-striped table-bordered">
             <thead>
