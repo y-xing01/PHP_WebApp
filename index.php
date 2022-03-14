@@ -41,7 +41,10 @@ $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-
+<?php
+require('db.php');
+include("auth_session.php");
+?>
 <?php
 include('includes/header.php');
 ?>
@@ -53,7 +56,24 @@ include('includes/header.php');
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-dark bg-primary" type="submit">Search</button>
+
             </form>
+            <?php
+            // if (isset($_POST['submit'])) {
+            //     $searchValue = $_POST['search'];
+            //     $con = new mysqli("localhost", "d00234628", "123!@#qweQWE", "badminton_shop");
+            //     if ($con->connect_error) {
+            //         echo "connection Failed: " . $con->connect_error;
+            //     } else {
+            //         $sql = "SELECT * FROM records WHERE price LIKE '%$searchValue%'";
+
+            //         $result = $con->query($sql);
+            //         while ($row = $result->fetch_assoc()) {
+            //             echo "The product name: " . $row['name'] . '<br>' . "The price: " . $row['price'] . '<br>' . '<br>';
+            //         }
+            //     }
+            // }
+            ?>
         </div>
 
         <table class="table table-hover table-striped table-bordered">
@@ -90,7 +110,5 @@ include('includes/header.php');
                 <?php endforeach; ?>
             </tbody>
         </table>
+
     </section>
-    <?php
-    include('includes/footer.php');
-    ?>

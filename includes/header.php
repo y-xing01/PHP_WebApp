@@ -24,18 +24,22 @@
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title h1" id="offcanvasNavbarLabel">Badminton</h5>
+          <h5 class="offcanvas-title h1" id="offcanvasNavbarLabel"></h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <hr>
             <?php foreach ($categories as $category) : ?>
-              <li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+              <li><a class="text-decoration-none" href=".?category_id=<?php echo $category['categoryID']; ?>">
                   <?php echo $category['categoryName']; ?>
                 </a>
               </li>
+              <hr>
             <?php endforeach; ?>
+        <p><a class="text-decoration-none" href="logout.php">Logout</a></p>
         </div>
+        
       </div>
       <div class="col align-self-center d-lg-flex justify-content-center position-static mb-5">
         <a class="nav-link active text-light" style="font-size:20px" aria-current="page" href="index.php">Home</a>

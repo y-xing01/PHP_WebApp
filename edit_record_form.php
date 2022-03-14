@@ -11,6 +11,16 @@ $statement->execute();
 $records = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
+<?php
+require('database.php');
+$query = 'SELECT *
+          FROM categories
+          ORDER BY categoryID';
+$statement = $db->prepare($query);
+$statement->execute();
+$categories = $statement->fetchAll();
+$statement->closeCursor();
+?>
 <!-- the head section -->
 <div id="test1" class="container-l">
        <?php
