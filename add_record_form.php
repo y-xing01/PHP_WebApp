@@ -18,7 +18,7 @@ $statement->closeCursor();
 
         <div class="mb-1 ms-5 ps-2 col-lg-9">
             <div style="text-align:center" class="col-auto ms-5">
-                <label for="formFile" class="form-label ms-5">Category:</label>
+                <label for="formFile" class="form-label ms-5" onBlur="product_validation();">Category:</label>
                 <select class="col-6 ms-3" name="category_id">
                     <?php foreach ($categories as $category) : ?>
                         <option value="<?php echo $category['categoryID']; ?>">

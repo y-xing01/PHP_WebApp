@@ -36,7 +36,7 @@ $statement->closeCursor();
                             <label for="inputPassword" class="form-control-plaintext">Category ID:</label>
                      </div>
                      <div class="col-6">
-                            <input class="form-control" id="inputPassword" type="category_id" name="category_id" value="<?php echo $records['categoryID']; ?>">
+                            <input onBlur="id_validation();" class="form-control" id="inputPassword" type="category_id" name="category_id" value="<?php echo $records['categoryID']; ?>">
                      </div>
               </div>
               <br>
@@ -56,7 +56,7 @@ $statement->closeCursor();
                             <label for="formFile" class="form-label">List Price:</label>
                      </div>
                      <div class="col-6">
-                            <input class="form-control" type="input" name="price" value="<?php echo $records['price']; ?>">
+                            <input placeholder="Enter the Price Ex(00.00)" pattern="[0-9]+\.[0-9]{2,}" class="form-control" type="input" name="price" value="<?php echo $records['price']; ?>">
                      </div>
               </div>
               <br>
